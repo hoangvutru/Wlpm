@@ -1,0 +1,52 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 )$  \u0022     ",
+      "RelativeMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|solutionrelative:Wlpm\\Wlpm.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 )$  \u0022     "
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Wlpm.rc - IDD_WLPM_DIALOG - Dialog",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc",
+              "RelativeDocumentMoniker": "Wlpm\\Wlpm.rc",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc - IDD_WLPM_DIALOG - Dialog",
+              "RelativeToolTip": "Wlpm\\Wlpm.rc - IDD_WLPM_DIALOG - Dialog",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-12-07T00:08:53.755Z",
+              "EditorCaption": " - IDD_WLPM_DIALOG - Dialog"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
