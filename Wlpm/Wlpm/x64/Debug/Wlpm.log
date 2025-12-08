@@ -1,0 +1,20 @@
+﻿  PWManagementDlg.cpp
+C:\Users\ADMIN\OneDrive\Tài liệu\GitHub\Wlpm\Wlpm\Wlpm\PWManagementDlg.cpp(86,2): warning C4566: character represented by universal-character-name '\u0300' cannot be represented in the current code page (1252)
+  (compiling source file '/PWManagementDlg.cpp')
+  
+C:\Users\ADMIN\OneDrive\Tài liệu\GitHub\Wlpm\Wlpm\Wlpm\PWManagementDlg.cpp(86,2): warning C4566: character represented by universal-character-name '\u0323' cannot be represented in the current code page (1252)
+  (compiling source file '/PWManagementDlg.cpp')
+  
+C:\Users\ADMIN\OneDrive\Tài liệu\GitHub\Wlpm\Wlpm\Wlpm\PWManagementDlg.cpp(87,2): warning C4566: character represented by universal-character-name '\u0300' cannot be represented in the current code page (1252)
+  (compiling source file '/PWManagementDlg.cpp')
+  
+C:\Users\ADMIN\OneDrive\Tài liệu\GitHub\Wlpm\Wlpm\Wlpm\PWManagementDlg.cpp(87,2): warning C4566: character represented by universal-character-name '\u0323' cannot be represented in the current code page (1252)
+  (compiling source file '/PWManagementDlg.cpp')
+  
+C:\Users\ADMIN\OneDrive\Tài liệu\GitHub\Wlpm\Wlpm\Wlpm\PWManagementDlg.cpp(95,3): warning C4566: character represented by universal-character-name '\u0300' cannot be represented in the current code page (1252)
+  (compiling source file '/PWManagementDlg.cpp')
+  
+C:\Users\ADMIN\OneDrive\Tài liệu\GitHub\Wlpm\Wlpm\Wlpm\PWManagementDlg.cpp(95,3): warning C4566: character represented by universal-character-name '\u0323' cannot be represented in the current code page (1252)
+  (compiling source file '/PWManagementDlg.cpp')
+  
+  Wlpm.vcxproj -> C:\Users\ADMIN\OneDrive\Tài liệu\GitHub\Wlpm\Wlpm\x64\Debug\Wlpm.exe

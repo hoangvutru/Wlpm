@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 )$  \u0022     ",
-      "RelativeMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|solutionrelative:Wlpm\\Wlpm.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 )$  \u0022     "
+      "AbsoluteMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\PWManagementDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|solutionrelative:Wlpm\\PWManagementDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u00A1 )$  \u0022     ",
+      "RelativeMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|solutionrelative:Wlpm\\Wlpm.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u00A1 )$  \u0022     "
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\PWManagementDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|solutionrelative:Wlpm\\PWManagementDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,15 +42,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Wlpm.rc - IDD_WLPM_DIALOG - Dialog",
+              "DocumentIndex": 1,
+              "Title": "Wlpm.rc - IDD_PWMANAGEMENT - Dialog",
               "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc",
               "RelativeDocumentMoniker": "Wlpm\\Wlpm.rc",
-              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc - IDD_WLPM_DIALOG - Dialog",
-              "RelativeToolTip": "Wlpm\\Wlpm.rc - IDD_WLPM_DIALOG - Dialog",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc - IDD_PWMANAGEMENT - Dialog",
+              "RelativeToolTip": "Wlpm\\Wlpm.rc - IDD_PWMANAGEMENT - Dialog",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-12-07T00:08:53.755Z",
-              "EditorCaption": " - IDD_WLPM_DIALOG - Dialog"
+              "WhenOpened": "2025-12-08T06:49:54.694Z",
+              "EditorCaption": " - IDD_PWMANAGEMENT - Dialog"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PWManagementDlg.h",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\PWManagementDlg.h",
+              "RelativeDocumentMoniker": "Wlpm\\PWManagementDlg.h",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\PWManagementDlg.h",
+              "RelativeToolTip": "Wlpm\\PWManagementDlg.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-12-08T06:34:20.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PWManagementDlg.cpp",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\PWManagementDlg.cpp",
+              "RelativeDocumentMoniker": "Wlpm\\PWManagementDlg.cpp",
+              "ToolTip": "C:\\Users\\ADMIN\\OneDrive\\Ta\u0300i li\u00EA\u0323u\\GitHub\\Wlpm\\Wlpm\\Wlpm\\PWManagementDlg.cpp",
+              "RelativeToolTip": "Wlpm\\PWManagementDlg.cpp",
+              "ViewState": "AgIAAMgAAAAAAAAAAAAmwOcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-08T01:03:04.3Z",
+              "EditorCaption": ""
             }
           ]
         }

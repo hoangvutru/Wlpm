@@ -6,6 +6,8 @@
 #include "framework.h"
 #include "Wlpm.h"
 #include "WlpmDlg.h"
+#include "PWManagementDlg.h"
+#include "resource.h"
 #include "afxdialogex.h"
 
 #ifdef _DEBUG
@@ -65,6 +67,7 @@ BEGIN_MESSAGE_MAP(CWlpmDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_BUTTON1, &CWlpmDlg::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
@@ -153,3 +156,11 @@ HCURSOR CWlpmDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+
+void CWlpmDlg::OnBnClickedButton1()
+{
+	// TODO: Add your control notification handler code here
+	PWManagementDlg pwDlg;
+	EndDialog(IDOK);
+	pwDlg.DoModal();
+}
