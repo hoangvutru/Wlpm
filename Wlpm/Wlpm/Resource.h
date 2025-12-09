@@ -8,13 +8,14 @@
 #define IDD_WLPM_DIALOG                 102
 #define IDR_MAINFRAME                   128
 #define IDD_PWMANAGEMENT                129
-#define IDD_DIALOG1                     131
+#define IDD_LOGINDIALOG                 131
 #define ID_PWLIST                       1000
 #define ID_CHECK_SHOWPW                 1001
 #define ID_CHECK_UPDATEPW               1003
 #define IDC_BUTTON1                     1004
 #define IDC_EDIT1                       1005
 #define ID_USERNAME                     1005
+#define IDC_EDIT_PASSWORD               1005
 #define IDC_EDIT2                       1006
 #define ID_PW                           1006
 #define ID_DELETE_BTN                   1007
@@ -25,6 +26,10 @@
 #define ID_INSERT_BTN                   1012
 #define ID_ADD_BTN                      1012
 #define ID_COPY_NOTIFY                  1013
+#define IDC_CHECK_SHOWPASS              1014
+#define IDC_BUTTON2                     1015
+#define IDC_STATIC_FORGOT               1016
+#define IDC_BUTTON_ACCESS               1017
 
 // Next default values for new objects
 // 
@@ -32,7 +37,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        133
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1014
+#define _APS_NEXT_CONTROL_VALUE         1018
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

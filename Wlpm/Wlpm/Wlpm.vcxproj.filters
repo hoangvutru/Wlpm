@@ -36,6 +36,9 @@
     <ClInclude Include="PWManagementDlg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LoginDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Wlpm.cpp">
@@ -50,7 +53,7 @@
     <ClCompile Include="PWManagementDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Something.cpp">
+    <ClCompile Include="LoginDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

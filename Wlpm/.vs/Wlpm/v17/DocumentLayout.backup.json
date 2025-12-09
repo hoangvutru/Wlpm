@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\Something.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|solutionrelative:Wlpm\\Something.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u00A3 )$  \u0022     ",
       "RelativeMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|solutionrelative:Wlpm\\Wlpm.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u00A3 )$  \u0022     "
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\PWManagementDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|solutionrelative:Wlpm\\PWManagementDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\LoginDialog.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|solutionrelative:Wlpm\\LoginDialog.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u00A1 )$  \u0022     ",
-      "RelativeMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|solutionrelative:Wlpm\\Wlpm.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u00A1 )$  \u0022     "
+      "AbsoluteMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\WlpmDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|solutionrelative:Wlpm\\WlpmDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\PWManagementDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|solutionrelative:Wlpm\\PWManagementDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\LoginDialog.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D842AFB6-95F8-3ED4-4CD2-75053EEE1213}|Wlpm\\Wlpm.vcxproj|solutionrelative:Wlpm\\LoginDialog.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,65 +54,53 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Something.cpp",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\Something.cpp",
-              "RelativeDocumentMoniker": "Wlpm\\Something.cpp",
-              "ToolTip": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\Something.cpp",
-              "RelativeToolTip": "Wlpm\\Something.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-09T12:20:58.752Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Wlpm.rc - IDD_DIALOG1 - Dialog",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc",
-              "RelativeDocumentMoniker": "Wlpm\\Wlpm.rc",
-              "ToolTip": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc - IDD_DIALOG1 - Dialog",
-              "RelativeToolTip": "Wlpm\\Wlpm.rc - IDD_DIALOG1 - Dialog",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-12-09T12:17:49.616Z",
-              "EditorCaption": " - IDD_DIALOG1 - Dialog"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Wlpm.rc - IDD_PWMANAGEMENT - Dialog",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc",
-              "RelativeDocumentMoniker": "Wlpm\\Wlpm.rc",
-              "ToolTip": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc - IDD_PWMANAGEMENT - Dialog",
-              "RelativeToolTip": "Wlpm\\Wlpm.rc - IDD_PWMANAGEMENT - Dialog",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-12-08T06:49:54.694Z",
-              "EditorCaption": " - IDD_PWMANAGEMENT - Dialog"
+              "Title": "LoginDialog.cpp",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\LoginDialog.cpp",
+              "RelativeDocumentMoniker": "Wlpm\\LoginDialog.cpp",
+              "ToolTip": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\LoginDialog.cpp",
+              "RelativeToolTip": "Wlpm\\LoginDialog.cpp",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAAAG8AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-09T12:39:54.019Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PWManagementDlg.h",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\PWManagementDlg.h",
-              "RelativeDocumentMoniker": "Wlpm\\PWManagementDlg.h",
-              "ToolTip": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\PWManagementDlg.h",
-              "RelativeToolTip": "Wlpm\\PWManagementDlg.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-12-08T06:34:20.687Z",
+              "Title": "WlpmDlg.cpp",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\WlpmDlg.cpp",
+              "RelativeDocumentMoniker": "Wlpm\\WlpmDlg.cpp",
+              "ToolTip": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\WlpmDlg.cpp",
+              "RelativeToolTip": "Wlpm\\WlpmDlg.cpp",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAAAKIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-12-09T12:38:21.723Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PWManagementDlg.cpp",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\PWManagementDlg.cpp",
-              "RelativeDocumentMoniker": "Wlpm\\PWManagementDlg.cpp",
-              "ToolTip": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\PWManagementDlg.cpp",
-              "RelativeToolTip": "Wlpm\\PWManagementDlg.cpp",
-              "ViewState": "AgIAAPQAAAAAAAAAAAAgwAwBAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-12-08T01:03:04.3Z",
+              "DocumentIndex": 0,
+              "Title": "Wlpm.rc - IDD_LOGINDIALOG - Dialog",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc",
+              "RelativeDocumentMoniker": "Wlpm\\Wlpm.rc",
+              "ToolTip": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\Wlpm.rc - IDD_LOGINDIALOG - Dialog",
+              "RelativeToolTip": "Wlpm\\Wlpm.rc - IDD_LOGINDIALOG - Dialog",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
+              "WhenOpened": "2025-12-09T12:38:05.238Z",
+              "EditorCaption": " - IDD_LOGINDIALOG - Dialog"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginDialog.h",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\LoginDialog.h",
+              "RelativeDocumentMoniker": "Wlpm\\LoginDialog.h",
+              "ToolTip": "C:\\Users\\Lenovo\\OneDrive\\Desktop\\SafeVault\\Wlpm\\Wlpm\\Wlpm\\LoginDialog.h",
+              "RelativeToolTip": "Wlpm\\LoginDialog.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-12-09T12:37:54.407Z",
               "EditorCaption": ""
             }
           ]

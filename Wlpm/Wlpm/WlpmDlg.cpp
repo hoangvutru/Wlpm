@@ -9,7 +9,7 @@
 #include "PWManagementDlg.h"
 #include "resource.h"
 #include "afxdialogex.h"
-
+#include "LoginDialog.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -160,7 +160,7 @@ HCURSOR CWlpmDlg::OnQueryDragIcon()
 void CWlpmDlg::OnBnClickedButton1()
 {
 	// TODO: Add your control notification handler code here
-	PWManagementDlg pwDlg;
+	LoginDialog LogDlg;
 	EndDialog(IDOK);
-	pwDlg.DoModal();
+	LogDlg.DoModal();
 }
