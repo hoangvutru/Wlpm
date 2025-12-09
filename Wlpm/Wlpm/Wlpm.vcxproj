@@ -199,6 +199,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="PWManagementDlg.cpp" />
+    <ClCompile Include="Something.cpp" />
     <ClCompile Include="Wlpm.cpp" />
     <ClCompile Include="WlpmDlg.cpp" />
   </ItemGroup>

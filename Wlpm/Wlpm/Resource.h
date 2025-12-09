@@ -8,6 +8,7 @@
 #define IDD_WLPM_DIALOG                 102
 #define IDR_MAINFRAME                   128
 #define IDD_PWMANAGEMENT                129
+#define IDD_DIALOG1                     131
 #define ID_PWLIST                       1000
 #define ID_CHECK_SHOWPW                 1001
 #define ID_CHECK_UPDATEPW               1003
@@ -29,7 +30,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        131
+#define _APS_NEXT_RESOURCE_VALUE        133
 #define _APS_NEXT_COMMAND_VALUE         32771
 #define _APS_NEXT_CONTROL_VALUE         1014
 #define _APS_NEXT_SYMED_VALUE           101
