@@ -13,10 +13,17 @@
 #define ID_CHECK_UPDATEPW               1003
 #define IDC_BUTTON1                     1004
 #define IDC_EDIT1                       1005
+#define ID_USERNAME                     1005
 #define IDC_EDIT2                       1006
+#define ID_PW                           1006
 #define ID_DELETE_BTN                   1007
 #define ID_COPY_USERNAME                1008
 #define ID_COPY_PASSWORD                1009
+#define ID_WEBSITE                      1010
+#define ID_UPDATE_BTN                   1011
+#define ID_INSERT_BTN                   1012
+#define ID_ADD_BTN                      1012
+#define ID_COPY_NOTIFY                  1013
 
 // Next default values for new objects
 // 
@@ -24,7 +31,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        131
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1010
+#define _APS_NEXT_CONTROL_VALUE         1014
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

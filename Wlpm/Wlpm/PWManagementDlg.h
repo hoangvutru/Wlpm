@@ -22,7 +22,7 @@ protected:
 	virtual BOOL OnInitDialog();
 	DECLARE_MESSAGE_MAP()
 public:
-	CStringW id;
+	CStringW id = L"";
 	CListCtrl pwlist_ctrl;
 	CButton showpw_ctrl;
 	CButton updatepw_ctrl;
@@ -37,4 +37,13 @@ public:
 	afx_msg void OnBnClickedCopyPassword();
 	CButton copy_username_ctrl;
 	CButton copy_pw_ctrl;
+	CEdit website_ctrl;
+	afx_msg void OnBnClickedUpdateBtn();
+	CButton update_btn_ctrl;
+	CStatic copy_notify_ctrl;
+	afx_msg void OnEnChangeWebsite();
+	afx_msg void OnEnChangeEdit1();
+	afx_msg void OnEnChangePw();
+	afx_msg void OnBnClickedAddBtn();
+	CButton add_btn_ctrl;
 };
