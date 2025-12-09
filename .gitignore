@@ -1,1 +1,21 @@
+# Visual Studio
+.vs/
+*.user
+*.opendb
+
+# Build outputs
+Debug/
+Release/
+x64/
+*.obj
+*.pdb
+*.tlog
+*.ilk
+
+# IntelliSense cache
+ipch/
 *.ipch
+
+# Other auto-generated stuff
+*.cache
+*.log
