@@ -1,0 +1,46 @@
+# Visual Studio build files
+x64/
+x86/
+*.obj
+*.pdb
+*.ilk
+*.log
+*.idb
+*.pch
+*.res
+*.aps
+*.tlog/
+*.lastbuildstate
+*.exe.recipe
+*.vcxproj.FileListAbsolute.txt
+
+# Visual Studio user files
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+
+# Debug files
+*.dll
+*.exe
+*.pdb
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Visual Studio cache/options
+.vs/
+*.opensdf
+*.sdf
+*.db
+
