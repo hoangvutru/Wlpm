@@ -39,7 +39,7 @@
     <ClInclude Include="LoginDialog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\sqlite-amalgamation-3500400\sqlite-amalgamation-3500400\sqlite3.h">
+    <ClInclude Include="sqlite3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -59,7 +59,7 @@
     <ClCompile Include="LoginDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\sqlite-amalgamation-3500400\sqlite-amalgamation-3500400\sqlite3.c">
+    <ClCompile Include="sqlite3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
