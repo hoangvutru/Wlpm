@@ -26,11 +26,6 @@ x86/
 *.db-shm
 *.db-wal
 
-# Debug files
-*.dll
-*.exe
-*.pdb
-
 # Build results
 [Dd]ebug/
 [Rr]elease/
