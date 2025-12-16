@@ -4,9 +4,6 @@
 *.opendb
 
 # Build outputs
-Debug/
-Release/
-x64/
 *.obj
 *.pdb
 *.tlog
