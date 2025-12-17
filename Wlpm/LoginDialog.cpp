@@ -4,6 +4,10 @@
 #include "LoginDialog.h"
 #include "PWManagementDlg.h"
 #include "resource.h"
+#include <WinUser.h>
+
+#pragma comment(lib, "user32.lib")
+
 
 IMPLEMENT_DYNAMIC(LoginDialog, CDialogEx)
 
@@ -52,6 +56,19 @@ END_INTERFACE_MAP()
  BOOL LoginDialog::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
+	//Anti screenshot
+	HWND hWnd = GetSafeHwnd();
+	HMODULE hUser32 = nullptr;
+	typedef HRESULT(WINAPI* pSetWindowDisplayAffinity)(HWND, DWORD);
+	pSetWindowDisplayAffinity fn = nullptr;
+	hUser32 = LoadLibrary(L"user32.dll");
+	if (hUser32) {
+		pSetWindowDisplayAffinity fn = (pSetWindowDisplayAffinity)GetProcAddress(hUser32, "SetWindowDisplayAffinity");
+		if (fn) {
+			fn(hWnd, 0x00000011);
+		}
+		FreeLibrary(hUser32);
+	}
 
 	return TRUE;
 }

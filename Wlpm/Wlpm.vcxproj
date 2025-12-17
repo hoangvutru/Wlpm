@@ -76,8 +76,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Admin\Downloads\libsodium-1.0.20-msvc\libsodium\include;C:\Users\ADMIN\Downloads\libsodium\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Admin\Downloads\libsodium-1.0.20-msvc\libsodium\x64\Release\v143\dynamic;C:\Users\ADMIN\Downloads\libsodium\x64\Release\v143\dynamic;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Admin\Downloads\libsodium-1.0.20-msvc\libsodium\include;C:\Users\ADMIN\Downloads\libsodium\include;C:\Users\Lenovo\Downloads\libsodium-1.0.20-msvc\libsodium\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Admin\Downloads\libsodium-1.0.20-msvc\libsodium\x64\Release\v143\dynamic;C:\Users\ADMIN\Downloads\libsodium\x64\Release\v143\dynamic;C:\Users\Lenovo\Downloads\libsodium-1.0.20-msvc\libsodium\x64\Release\v143\dynamic;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>

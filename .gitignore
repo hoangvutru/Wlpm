@@ -2,12 +2,14 @@
 .vs/
 *.user
 *.opendb
+*.pch
 
 # Build outputs
 *.obj
 *.pdb
 *.tlog
 *.ilk
+*.idb
 passwords.db
 
 # IntelliSense cache
