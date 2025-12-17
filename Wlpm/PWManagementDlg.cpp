@@ -314,6 +314,20 @@ BOOL PWManagementDlg::OnInitDialog()
 		}
 	}
 
+	//Anti-screenshot
+	HWND hWnd = GetSafeHwnd();
+	HMODULE hUser32 = nullptr;
+	typedef HRESULT(WINAPI* pSetWindowDisplayAffinity)(HWND, DWORD);
+	pSetWindowDisplayAffinity fn = nullptr;
+	hUser32 = LoadLibrary(L"user32.dll");
+	if (hUser32) {
+		pSetWindowDisplayAffinity fn = (pSetWindowDisplayAffinity)GetProcAddress(hUser32, "SetWindowDisplayAffinity");
+		if (fn) {
+			fn(hWnd, 0x00000011);
+		}
+		FreeLibrary(hUser32);
+	}
+
 	SetWindowTheme(pwlist_ctrl, L"Explorer", NULL);
 	pwlist_ctrl.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
 	pwlist_ctrl.InsertColumn(0, _T("ID"), LVCFMT_LEFT, 50);

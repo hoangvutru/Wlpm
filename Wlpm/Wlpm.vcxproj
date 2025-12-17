@@ -76,8 +76,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+<<<<<<< Updated upstream
     <IncludePath>C:\Users\Admin\Downloads\libsodium-1.0.20-msvc\libsodium\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\Admin\Downloads\libsodium-1.0.20-msvc\libsodium\x64\Release\v143\dynamic;$(LibraryPath)</LibraryPath>
+=======
+    <IncludePath>C:\Users\Admin\Downloads\libsodium-1.0.20-msvc\libsodium\include;C:\Users\ADMIN\Downloads\libsodium\include;C:\Users\Lenovo\Downloads\libsodium-1.0.20-msvc\libsodium\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Admin\Downloads\libsodium-1.0.20-msvc\libsodium\x64\Release\v143\dynamic;C:\Users\ADMIN\Downloads\libsodium\x64\Release\v143\dynamic;C:\Users\Lenovo\Downloads\libsodium-1.0.20-msvc\libsodium\x64\Release\v143\dynamic;$(LibraryPath)</LibraryPath>
+>>>>>>> Stashed changes
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
@@ -98,7 +103,8 @@
       <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);C:\Users\Lenovo\Downloads\libsodium-1.0.20-msvc\libsodium\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>C:\Users\Lenovo\Downloads\libsodium-1.0.20-msvc\libsodium\include;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
