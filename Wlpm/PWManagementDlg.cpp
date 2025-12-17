@@ -405,6 +405,29 @@ UINT showCopyNotify(LPVOID pParam)
 	dlg->copy_notify_ctrl.ShowWindow(SW_SHOW);
 	Sleep(1000);
 	dlg->copy_notify_ctrl.ShowWindow(SW_HIDE);
+	Sleep(10000);
+	CStringW copiedUsername = L"";
+	OpenClipboard(dlg->GetSafeHwnd());
+	EmptyClipboard();
+	HGLOBAL hGlob = GlobalAlloc(GMEM_MOVEABLE, (copiedUsername.GetLength() + 1) * sizeof(WCHAR));
+	if (hGlob) {
+		memcpy(GlobalLock(hGlob), (LPCWSTR)copiedUsername, (copiedUsername.GetLength() + 1) * sizeof(WCHAR));
+		GlobalUnlock(hGlob);
+		SetClipboardData(CF_UNICODETEXT, hGlob);
+		GlobalFree(hGlob);
+	}
+	CloseClipboard();
+	return 0;
+}
+
+UINT disableCopyBtn(LPVOID pParam)
+{
+	PWManagementDlg* dlg = (PWManagementDlg*)pParam;
+	dlg->copy_username_ctrl.EnableWindow(FALSE);
+	dlg->copy_pw_ctrl.EnableWindow(FALSE);
+	Sleep(10000);
+	dlg->copy_username_ctrl.EnableWindow(TRUE);
+	dlg->copy_pw_ctrl.EnableWindow(TRUE);
 	return 0;
 }
 
@@ -419,9 +442,11 @@ void PWManagementDlg::OnBnClickedCopyUsername()
 		memcpy(GlobalLock(hGlob), (LPCWSTR)copiedUsername, (copiedUsername.GetLength() + 1) * sizeof(WCHAR));
 		GlobalUnlock(hGlob);
 		SetClipboardData(CF_UNICODETEXT, hGlob);
+		GlobalFree(hGlob);
 	}
 	CloseClipboard();
 	AfxBeginThread(showCopyNotify, this);
+	AfxBeginThread(disableCopyBtn, this);
 }
 
 void PWManagementDlg::OnBnClickedCopyPassword()
@@ -435,9 +460,11 @@ void PWManagementDlg::OnBnClickedCopyPassword()
 		memcpy(GlobalLock(hGlob), (LPCWSTR)copiedPassword, (copiedPassword.GetLength() + 1) * sizeof(WCHAR));
 		GlobalUnlock(hGlob);
 		SetClipboardData(CF_UNICODETEXT, hGlob);
+		GlobalFree(hGlob);
 	}
 	CloseClipboard();
 	AfxBeginThread(showCopyNotify, this);
+	AfxBeginThread(disableCopyBtn, this);
 }
 
 void PWManagementDlg::OnBnClickedUpdateBtn()
