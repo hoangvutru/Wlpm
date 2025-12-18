@@ -5,6 +5,7 @@
 #include "PWManagementDlg.h"
 #include "resource.h"
 #include <WinUser.h>
+#include <TlHelp32.h>
 
 #pragma comment(lib, "user32.lib")
 
@@ -42,6 +43,8 @@ BEGIN_MESSAGE_MAP(LoginDialog, CDialogEx)
 	ON_BN_CLICKED(IDC_CHECK_SHOWPASS, &LoginDialog::OnBnClickedCheckShowpass)
 	ON_BN_CLICKED(IDC_BUTTON_ACCESS, &LoginDialog::OnBnClickedButtonAccess)
 	ON_BN_CLICKED(IDC_BUTTON2, &LoginDialog::OnBnClickedButton2)
+	ON_WM_TIMER()
+	ON_WM_DESTROY()
 END_MESSAGE_MAP()
 
 BEGIN_DISPATCH_MAP(LoginDialog, CDialogEx)
@@ -69,7 +72,9 @@ END_INTERFACE_MAP()
 		}
 		FreeLibrary(hUser32);
 	}
-
+	//Set timer
+	m_nTimerID = SetTimer(1001, 2000, nullptr);  
+	m_bMinimizedByDetection = false;
 	return TRUE;
 }
 void LoginDialog::OnStnClickedStaticForgot()
@@ -231,4 +236,71 @@ void LoginDialog::OnBnClickedButtonAccess()
 
 void LoginDialog::OnBnClickedButton2()
 {
+}
+
+void LoginDialog::OnTimer(UINT_PTR nIDEvent)
+{
+	if (nIDEvent == m_nTimerID) {
+		bool detected = DetectDangerousTool();
+
+		if (detected) {
+			if (!IsIconic()) {  
+				ShowWindow(SW_MINIMIZE);
+			}
+			m_bMinimizedByDetection = true;  
+		}
+		else {
+			if (m_bMinimizedByDetection && IsIconic()) {
+				ShowWindow(SW_RESTORE);
+			}
+			m_bMinimizedByDetection = false;
+		}
+	}
+
+	CDialogEx::OnTimer(nIDEvent);
+}
+
+bool LoginDialog::DetectDangerousTool()
+	{
+	const wchar_t* dangerousProcesses[] = {
+	L"ShareX.exe",
+	L"Greenshot.exe",
+	L"Lightshot.exe",   
+	L"PicPick.exe",
+	L"snagit64.exe",
+	L"snagit32.exe",
+	L"obs64.exe",
+	L"obs32.exe",
+	L"bandicam.exe",
+	nullptr  
+	};
+
+	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+	if (hSnapshot == INVALID_HANDLE_VALUE) return false;
+
+	PROCESSENTRY32W pe32;
+	pe32.dwSize = sizeof(PROCESSENTRY32W);
+
+	if (Process32FirstW(hSnapshot, &pe32)) {
+		do {
+			for (int i = 0; dangerousProcesses[i] != nullptr; i++) {
+				if (_wcsicmp(pe32.szExeFile, dangerousProcesses[i]) == 0) {
+					CloseHandle(hSnapshot);
+					return true;  
+				}
+			}
+		} while (Process32NextW(hSnapshot, &pe32));
+	}
+
+	CloseHandle(hSnapshot);
+	return false;
+}
+void LoginDialog::OnDestroy()
+{
+	if (m_nTimerID) {
+		KillTimer(m_nTimerID);
+		m_nTimerID = 0;
+	}
+
+	CDialogEx::OnDestroy();
 }

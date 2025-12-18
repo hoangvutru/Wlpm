@@ -46,4 +46,10 @@ public:
 	afx_msg void OnEnChangePw();
 	afx_msg void OnBnClickedAddBtn();
 	CButton add_btn_ctrl;
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg void OnDestroy();
+private:
+	UINT m_nTimerID;
+	bool m_bMinimizedByDetection;
+	bool DetectDangerousTool();
 };

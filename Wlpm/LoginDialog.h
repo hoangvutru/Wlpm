@@ -31,4 +31,10 @@ public:
 	afx_msg void OnBnClickedCheckShowpass();
 	afx_msg void OnBnClickedButtonAccess();
 	afx_msg void OnBnClickedButton2();
+	afx_msg void OnTimer(UINT_PTR nIDEvent);
+	afx_msg void OnDestroy();
+private:
+	UINT m_nTimerID;
+	bool m_bMinimizedByDetection;
+	bool DetectDangerousTool();
 };

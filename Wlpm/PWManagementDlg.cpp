@@ -4,6 +4,8 @@
 #include "PWManagementDlg.h"
 #include "resource.h"
 #include <WinUser.h>
+#include <TlHelp32.h>
+
 
 #pragma comment(lib,"user32.lib")
 IMPLEMENT_DYNAMIC(PWManagementDlg, CDialogEx)
@@ -48,6 +50,8 @@ BEGIN_MESSAGE_MAP(PWManagementDlg, CDialogEx)
 	ON_EN_CHANGE(IDC_EDIT1, &PWManagementDlg::OnEnChangeEdit1)
 	ON_EN_CHANGE(ID_PW, &PWManagementDlg::OnEnChangePw)
 	ON_BN_CLICKED(ID_ADD_BTN, &PWManagementDlg::OnBnClickedAddBtn)
+	ON_WM_TIMER()
+	ON_WM_DESTROY()
 END_MESSAGE_MAP()
 
 struct DbEntry
@@ -329,6 +333,9 @@ BOOL PWManagementDlg::OnInitDialog()
 		}
 		FreeLibrary(hUser32);
 	}
+	//Set timer and initial minimize
+	m_nTimerID = SetTimer(1001, 2000, nullptr);
+	m_bMinimizedByDetection = false;
 
 	SetWindowTheme(pwlist_ctrl, L"Explorer", NULL);
 	pwlist_ctrl.SetExtendedStyle(LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES);
@@ -634,4 +641,70 @@ void PWManagementDlg::OnBnClickedAddBtn()
 	{
 		AfxMessageBox(L"Add failed.", MB_ICONERROR);
 	}
+}
+void PWManagementDlg::OnTimer(UINT_PTR nIDEvent)
+{
+	if (nIDEvent == m_nTimerID) {
+		bool detected = DetectDangerousTool();
+
+		if (detected) {
+			if (!IsIconic()) {
+				ShowWindow(SW_MINIMIZE);
+			}
+			m_bMinimizedByDetection = true;
+		}
+		else {
+			if (m_bMinimizedByDetection && IsIconic()) {
+				ShowWindow(SW_RESTORE);
+			}
+			m_bMinimizedByDetection = false;
+		}
+	}
+
+	CDialogEx::OnTimer(nIDEvent);
+}
+
+bool PWManagementDlg::DetectDangerousTool()
+{
+	const wchar_t* dangerousProcesses[] = {
+	L"ShareX.exe",
+	L"Greenshot.exe",
+	L"Lightshot.exe",
+	L"PicPick.exe",
+	L"snagit64.exe",
+	L"snagit32.exe",
+	L"obs64.exe",
+	L"obs32.exe",
+	L"bandicam.exe",
+	nullptr
+	};
+
+	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+	if (hSnapshot == INVALID_HANDLE_VALUE) return false;
+
+	PROCESSENTRY32W pe32;
+	pe32.dwSize = sizeof(PROCESSENTRY32W);
+
+	if (Process32FirstW(hSnapshot, &pe32)) {
+		do {
+			for (int i = 0; dangerousProcesses[i] != nullptr; i++) {
+				if (_wcsicmp(pe32.szExeFile, dangerousProcesses[i]) == 0) {
+					CloseHandle(hSnapshot);
+					return true;
+				}
+			}
+		} while (Process32NextW(hSnapshot, &pe32));
+	}
+
+	CloseHandle(hSnapshot);
+	return false;
+}
+void PWManagementDlg::OnDestroy()
+{
+	if (m_nTimerID) {
+		KillTimer(m_nTimerID);
+		m_nTimerID = 0;
+	}
+
+	CDialogEx::OnDestroy();
 }
