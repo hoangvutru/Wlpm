@@ -1,46 +1,21 @@
-# Visual Studio build files
+# Visual Studio
+.vs/
+*.user
+*.opendb
+
+# Build outputs
+Debug/
+Release/
 x64/
-x86/
 *.obj
 *.pdb
+*.tlog
 *.ilk
+
+# IntelliSense cache
+ipch/
+*.ipch
+
+# Other auto-generated stuff
+*.cache
 *.log
-*.idb
-*.pch
-*.res
-*.aps
-*.tlog/
-*.lastbuildstate
-*.exe.recipe
-*.vcxproj.FileListAbsolute.txt
-
-# Visual Studio user files
-*.vcxproj.user
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-# Database files
-*.db
-*.db-shm
-*.db-wal
-
-# Debug files
-*.dll
-*.exe
-*.pdb
-
-# Build results
-[Dd]ebug/
-[Rr]elease/
-[Bb]in/
-[Oo]bj/
-[Ll]og/
-
-# Visual Studio cache/options
-.vs/
-*.opensdf
-*.sdf
-*.db
-

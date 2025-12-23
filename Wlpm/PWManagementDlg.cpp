@@ -143,7 +143,7 @@ static std::vector<DbEntry> LoadAllEntries()
 		int tagLen = sqlite3_column_bytes(stmt, 5);
 
 		if (cipherBlob && nonceBlob && tagBlob)
-		{
+{
 			e.ciphertext.assign((const uint8_t*)cipherBlob, (const uint8_t*)cipherBlob + cipherLen);
 			e.nonce.assign((const uint8_t*)nonceBlob, (const uint8_t*)nonceBlob + nonceLen);
 			e.tag.assign((const uint8_t*)tagBlob, (const uint8_t*)tagBlob + tagLen);
@@ -336,7 +336,7 @@ BOOL PWManagementDlg::OnInitDialog()
 	pwlist_ctrl.InsertColumn(3, _T("Password"), LVCFMT_LEFT, 200);
 
 	RefreshList(this);
-
+	
 	return TRUE;
 }
 
@@ -489,7 +489,7 @@ void PWManagementDlg::OnBnClickedUpdateBtn()
 	if (UpdateEntry(entryId, newWebsite, newUsername, newPassword))
 	{
 		RefreshList(this);
-		AfxMessageBox(L"Password entry updated successfully.");
+	AfxMessageBox(L"Password entry updated successfully.");
 	}
 	else
 	{
@@ -589,7 +589,7 @@ void PWManagementDlg::OnBnClickedAddBtn()
 	if (InsertEntry(newWebsite, newUsername, newPassword))
 	{
 		RefreshList(this);
-		AfxMessageBox(L"Password entry added successfully.");
+	AfxMessageBox(L"Password entry added successfully.");
 		
 		website_ctrl.SetWindowTextW(L"");
 		username_ctrl.SetWindowTextW(L"");

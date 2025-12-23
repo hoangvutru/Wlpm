@@ -20,11 +20,17 @@ LoginDialog::LoginDialog(CWnd* pParent /*=nullptr*/)
 #endif
 
 	EnableAutomation();
-
 }
 
 LoginDialog::~LoginDialog()
 {
+	UnregisterRawInput();
+
+	if (!m_securePassword.empty())
+	{
+		std::fill(m_securePassword.begin(), m_securePassword.end(), L'\0');
+		m_securePassword.clear();
+	}
 }
 
 void LoginDialog::OnFinalRelease()
@@ -37,12 +43,12 @@ void LoginDialog::DoDataExchange(CDataExchange* pDX)
 	CDialogEx::DoDataExchange(pDX);
 }
 
-
 BEGIN_MESSAGE_MAP(LoginDialog, CDialogEx)
 	ON_STN_CLICKED(IDC_STATIC_FORGOT, &LoginDialog::OnStnClickedStaticForgot)
 	ON_BN_CLICKED(IDC_CHECK_SHOWPASS, &LoginDialog::OnBnClickedCheckShowpass)
 	ON_BN_CLICKED(IDC_BUTTON_ACCESS, &LoginDialog::OnBnClickedButtonAccess)
 	ON_BN_CLICKED(IDC_BUTTON2, &LoginDialog::OnBnClickedButton2)
+	ON_MESSAGE(WM_INPUT, &LoginDialog::OnInput)
 END_MESSAGE_MAP()
 
 BEGIN_DISPATCH_MAP(LoginDialog, CDialogEx)
@@ -54,10 +60,12 @@ static const IID IID_ILoginDialog =
 BEGIN_INTERFACE_MAP(LoginDialog, CDialogEx)
 	INTERFACE_PART(LoginDialog, IID_ILoginDialog, Dispatch)
 END_INTERFACE_MAP()
- BOOL LoginDialog::OnInitDialog()
+
+BOOL LoginDialog::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
-	//Anti screenshot
+
+	// Anti screenshot
 	HWND hWnd = GetSafeHwnd();
 	HMODULE hUser32 = nullptr;
 	typedef HRESULT(WINAPI* pSetWindowDisplayAffinity)(HWND, DWORD);
@@ -70,7 +78,164 @@ END_INTERFACE_MAP()
 	}
 		FreeLibrary(hUser32);
 	}
+
+	if (CWnd* pEdit = GetDlgItem(IDC_EDIT_PASSWORD))
+	{
+		pEdit->SendMessage(EM_SETPASSWORDCHAR, (WPARAM)L'*');
+		pEdit->Invalidate();
+		pEdit->UpdateWindow();
+	}
+
+	RegisterRawInput();
 	return TRUE;
+}
+
+void LoginDialog::RegisterRawInput()
+{
+	if (m_bRawInputRegistered)
+		return;
+
+	RAWINPUTDEVICE rid{};
+	rid.usUsagePage = 0x01;
+	rid.usUsage = 0x06;
+	rid.dwFlags = RIDEV_INPUTSINK;
+	rid.hwndTarget = m_hWnd;
+
+	if (RegisterRawInputDevices(&rid, 1, sizeof(rid)))
+	{
+		m_bRawInputRegistered = TRUE;
+	}
+	else
+	{
+		m_bRawInputRegistered = FALSE;
+	}
+}
+
+void LoginDialog::UnregisterRawInput()
+{
+	if (!m_bRawInputRegistered)
+		return;
+
+	RAWINPUTDEVICE rid{};
+	rid.usUsagePage = 0x01;
+	rid.usUsage = 0x06;
+	rid.dwFlags = RIDEV_REMOVE;
+	rid.hwndTarget = nullptr;
+
+	RegisterRawInputDevices(&rid, 1, sizeof(rid));
+	m_bRawInputRegistered = FALSE;
+}
+
+wchar_t LoginDialog::ScanCodeToChar(UINT scanCode, BOOL isExtended, BOOL isShift, BOOL isCapsLock)
+{
+	BYTE keyboardState[256]{};
+	if (!GetKeyboardState(keyboardState))
+		return 0;
+
+	if (isShift)
+		keyboardState[VK_SHIFT] |= 0x80;
+	if (isCapsLock)
+		keyboardState[VK_CAPITAL] |= 0x01;
+
+	HKL layout = GetKeyboardLayout(0);
+	UINT vk = MapVirtualKeyEx(scanCode, MAPVK_VSC_TO_VK_EX, layout);
+	if (isExtended)
+		vk |= KF_EXTENDED;
+
+	wchar_t unicodeChar[4] = { 0 };
+	int result = ToUnicodeEx(vk, scanCode, keyboardState, unicodeChar, 4, 0, layout);
+	if (result == 1)
+		return unicodeChar[0];
+
+	return 0;
+}
+
+void LoginDialog::ProcessRawKeyboardInput(const RAWKEYBOARD& keyboard)
+{
+	CWnd* pEdit = GetDlgItem(IDC_EDIT_PASSWORD);
+	if (!pEdit || GetFocus() != pEdit)
+		return;
+
+	if (!(keyboard.Flags & RI_KEY_BREAK))
+	{
+		UINT scanCode = keyboard.MakeCode;
+		BOOL isExtended = (keyboard.Flags & RI_KEY_E0) != 0;
+
+		if (keyboard.VKey == VK_BACK)
+		{
+			if (!m_securePassword.empty())
+				m_securePassword.pop_back();
+		}
+		else if (keyboard.VKey == VK_RETURN)
+		{
+			OnBnClickedButtonAccess();
+			return;
+		}
+		else if (keyboard.VKey == VK_TAB || keyboard.VKey == VK_ESCAPE)
+		{
+			return;
+		}
+		else
+		{
+			BOOL isShift = (GetKeyState(VK_SHIFT) & 0x8000) != 0;
+			BOOL isCaps = (GetKeyState(VK_CAPITAL) & 0x0001) != 0;
+
+			wchar_t ch = ScanCodeToChar(scanCode, isExtended, isShift, isCaps);
+			if (ch >= L' ' && ch != L'\r' && ch != L'\n')
+			{
+				m_securePassword.push_back(ch);
+			}
+		}
+
+		std::wstring masked(m_securePassword.size(), L'*');
+		pEdit->SetWindowTextW(masked.c_str());
+		pEdit->SendMessage(EM_SETSEL, (WPARAM)masked.size(), (LPARAM)masked.size());
+	}
+}
+
+LRESULT LoginDialog::OnInput(WPARAM wParam, LPARAM lParam)
+{
+	UINT dwSize = 0;
+	GetRawInputData((HRAWINPUT)lParam, RID_INPUT, nullptr, &dwSize, sizeof(RAWINPUTHEADER));
+	if (dwSize == 0)
+		return 0;
+
+	std::vector<BYTE> buffer(dwSize);
+	if (GetRawInputData((HRAWINPUT)lParam, RID_INPUT, buffer.data(), &dwSize, sizeof(RAWINPUTHEADER)) != dwSize)
+		return 0;
+
+	RAWINPUT* raw = reinterpret_cast<RAWINPUT*>(buffer.data());
+	if (raw->header.dwType == RIM_TYPEKEYBOARD)
+	{
+		ProcessRawKeyboardInput(raw->data.keyboard);
+	}
+
+	return 0;
+}
+
+BOOL LoginDialog::PreTranslateMessage(MSG* pMsg)
+{
+	if (pMsg->message == WM_KEYDOWN || pMsg->message == WM_KEYUP || pMsg->message == WM_CHAR)
+	{
+		CWnd* pEdit = GetDlgItem(IDC_EDIT_PASSWORD);
+		if (pEdit && GetFocus() == pEdit)
+		{
+			if (pMsg->message == WM_KEYDOWN && pMsg->wParam == VK_RETURN)
+			{
+				OnBnClickedButtonAccess();
+				return TRUE;
+			}
+
+			if (pMsg->wParam == VK_TAB || pMsg->wParam == VK_ESCAPE)
+			{
+				return CDialogEx::PreTranslateMessage(pMsg);
+			}
+
+			return TRUE;
+		}
+	}
+
+	return CDialogEx::PreTranslateMessage(pMsg);
 }
 void LoginDialog::OnStnClickedStaticForgot()
 {
@@ -81,11 +246,19 @@ void LoginDialog::OnBnClickedCheckShowpass()
 {
 	BOOL bShow = IsDlgButtonChecked(IDC_CHECK_SHOWPASS);
 	CWnd* pEdit = GetDlgItem(IDC_EDIT_PASSWORD);
-	if (bShow) {
+	if (!pEdit)
+		return;
+
+	if (bShow)
+	{
 		pEdit->SendMessage(EM_SETPASSWORDCHAR, 0);
+		pEdit->SetWindowTextW(m_securePassword.c_str());
 	}
-	else {
-		pEdit->SendMessage(EM_SETPASSWORDCHAR, L'�');
+	else
+	{
+		pEdit->SendMessage(EM_SETPASSWORDCHAR, (WPARAM)L'*');
+		std::wstring masked(m_securePassword.size(), L'*');
+		pEdit->SetWindowTextW(masked.c_str());
 	}
 
 	pEdit->Invalidate();
@@ -94,9 +267,7 @@ void LoginDialog::OnBnClickedCheckShowpass()
 
 void LoginDialog::OnBnClickedButtonAccess()
 {
-	CString input;
-	GetDlgItemText(IDC_EDIT_PASSWORD, input);
-	if (input.IsEmpty())
+	if (m_securePassword.empty())
 	{
 		AfxMessageBox(L"Please enter master password!", MB_ICONWARNING);
 		return;
@@ -150,7 +321,7 @@ void LoginDialog::OnBnClickedButtonAccess()
 	}
 
 	std::array<uint8_t, 32> masterKey{};
-	if (!DeriveKeyArgon2id(std::wstring(input), salt, masterKey))
+	if (!DeriveKeyArgon2id(m_securePassword, salt, masterKey))
 	{
 		sqlite3_close(db);
 		AfxMessageBox(L"Failed to derive key!", MB_ICONERROR);
