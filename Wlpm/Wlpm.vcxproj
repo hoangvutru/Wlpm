@@ -204,7 +204,6 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Wlpm.h" />
-    <ClInclude Include="WlpmDlg.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sqlite3.c">
@@ -219,7 +218,6 @@
     </ClCompile>
     <ClCompile Include="PWManagementDlg.cpp" />
     <ClCompile Include="Wlpm.cpp" />
-    <ClCompile Include="WlpmDlg.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Wlpm.rc" />

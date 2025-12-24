@@ -5,7 +5,7 @@
 #include "pch.h"
 #include "framework.h"
 #include "Wlpm.h"
-#include "WlpmDlg.h"
+#include "LoginDialog.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -72,7 +72,7 @@ BOOL CWlpmApp::InitInstance()
 	// such as the name of your company or organization
 	SetRegistryKey(_T("Local AppWizard-Generated Applications"));
 
-	CWlpmDlg dlg;
+	LoginDialog dlg;
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)
